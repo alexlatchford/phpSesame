@@ -23,7 +23,7 @@ Examples
 I am assuming at this point you have installed and configured Sesame, have a repository set up and the REST API functioning correctly. If not then please consult the `Sesame documentation <http://www.openrdf.org/doc/sesame2/users/>`_.
 
 Using the Library
-=================
+-----------------
 
 To get the library up and running all you need is::
 
@@ -37,7 +37,7 @@ You can change the repository you are working on at any time by calling::
 	$store->setRepository("newRepo");
 
 Querying a Store
-================
+----------------
 
 The simplest way to query a store is::
 
@@ -58,7 +58,7 @@ The simplest way to query a store is::
 The library only supports SPARQL_XML at present, however Sesame supports a number of `Content Types <http://www.openrdf.org/doc/sesame2/system/ch08.html#d0e609u>`_ and the library could do with some more development.
 
 Namespaces
-==========
+----------
 
 Sesame 2.x can store commonly used namespaces and associated prefixes so that they do not have to be explicitly defined along with each query; these are held in a repository specific list::
 	
@@ -67,7 +67,7 @@ Sesame 2.x can store commonly used namespaces and associated prefixes so that th
 	$store->deleteNS("newrdf");
 
 Managing Data
-=============
+-------------
 
 Sesame allows you to either to append, overwrite or delete data. You can perform these actions on a specific context or on the entire repository. As such the second parameter is optional but it defaults to all. (I may change this though!)::
 
