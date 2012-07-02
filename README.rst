@@ -7,10 +7,10 @@ Welcome to the phpSesame project, this is a client library for Sesame 2.x which 
 Requirements
 ============
 
-`PHP 5+ <http://php.net/>` - (There shouldn't be any subversion dependencies, but I haven't checked thoroughly)
-`HTTP_Request2 <http://pear.php.net/package/HTTP_Request2>`
+`PHP 5+ <http://php.net/>`_ - (There shouldn't be any subversion dependencies, but I haven't checked thoroughly)
+`HTTP_Request2 <http://pear.php.net/package/HTTP_Request2>`_
 
-This project is a rewrite for Sesame 2.x of the `phseame library <http://www.hjournal.org/phesame/>` written by Michele Barbera and Riccardo Giomi.
+This project is a rewrite for Sesame 2.x of the `phseame library <http://www.hjournal.org/phesame/>`_ written by Michele Barbera and Riccardo Giomi.
 
 Support
 =======
@@ -20,7 +20,7 @@ Unfortunately the project is unsupported, there is some links below that documen
 Examples
 ========
 
-I am assuming at this point you have installed and configured Sesame, have a repository set up and the REST API functioning correctly. If not then please consult the `Sesame documentation <http://www.openrdf.org/doc/sesame2/users/>`.
+I am assuming at this point you have installed and configured Sesame, have a repository set up and the REST API functioning correctly. If not then please consult the `Sesame documentation <http://www.openrdf.org/doc/sesame2/users/>`_.
 
 Using the Library
 =================
@@ -55,12 +55,12 @@ The simplest way to query a store is::
 		}
 	}
 
-The library only supports SPARQL_XML at present, however Sesame supports a number of `Content Types <http://www.openrdf.org/doc/sesame2/system/ch08.html#d0e609u` and the library could do with some more development.
+The library only supports SPARQL_XML at present, however Sesame supports a number of `Content Types <http://www.openrdf.org/doc/sesame2/system/ch08.html#d0e609u>`_ and the library could do with some more development.
 
 Namespaces
 ==========
 
-Sesame 2.x can store commonly used namespaces and associated prefixes so that they do not have to be explicitly defined along with each query; these are held in a repository specific list.::
+Sesame 2.x can store commonly used namespaces and associated prefixes so that they do not have to be explicitly defined along with each query; these are held in a repository specific list::
 	
 	$namespace = $store->getNS("rdf");
 	$store->setNS("newrdf", $namespace);
@@ -69,7 +69,7 @@ Sesame 2.x can store commonly used namespaces and associated prefixes so that th
 Managing Data
 =============
 
-Sesame allows you to either to append, overwrite or delete data. You can perform these actions on a specific context or on the entire repository. As such the second parameter is optional but it defaults to all. (I may change this though!).::
+Sesame allows you to either to append, overwrite or delete data. You can perform these actions on a specific context or on the entire repository. As such the second parameter is optional but it defaults to all. (I may change this though!)::
 
 	$index = array("http://www.example.com/users/joe_bloggs" => array(
 	    "foaf:name" => array("Joe Bloggs"),
@@ -86,9 +86,9 @@ Sesame allows you to either to append, overwrite or delete data. You can perform
 
 	$store->append($rdfxml, $context, $inputFormat);
 
-Sesame supports a number of input types, the library supports: RDFXML, N3, NTRIPLES, TURTLE, TRIX and TRIG. Please see `Sesame's documentation <http://www.openrdf.org/doc/sesame2/system/ch08.html#d0e609` for more information.
+Sesame supports a number of input types, the library supports: RDFXML, N3, NTRIPLES, TURTLE, TRIX and TRIG. Please see `Sesame's documentation <http://www.openrdf.org/doc/sesame2/system/ch08.html#d0e609>`_ for more information.
 
-This example uses the `ARC2 library <https://github.com/semsol/arc2/wiki` to provide serialization.::
+This example uses the `ARC2 library <https://github.com/semsol/arc2/wiki>`_ to provide serialization::
 
 	$rdfxml = $serializer->getSerializedIndex($index);
 	$context = "http://www.example.com/users/joe_bloggs";
@@ -100,9 +100,9 @@ If at a later date you want to modify that data you must recreate the entire dat
 More Information
 ================
 
-If you are looking for a good RDF Serializer I use the `ARC2 library <https://github.com/semsol/arc2/wiki` for managing the data into the format required for this library to use.
+If you are looking for a good RDF Serializer I use the `ARC2 library <https://github.com/semsol/arc2/wiki>`_ for managing the data into the format required for this library to use.
 
 API Documentation
 =================
 
-Please use `PHP Documentor <http://www.phpdoc.org/>` to generate the API documentation.
+Please use `PHP Documentor <http://www.phpdoc.org/>`_ to generate the API documentation.
