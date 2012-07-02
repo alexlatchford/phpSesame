@@ -10,7 +10,7 @@ Requirements
 `PHP 5+ <http://php.net/>` - (There shouldn't be any subversion dependencies, but I haven't checked thoroughly)
 `HTTP_Request2 <http://pear.php.net/package/HTTP_Request2>`
 
-This project is a rewrite for Sesame 2.x of the phseame library written by Michele Barbera and Riccardo Giomi.
+This project is a rewrite for Sesame 2.x of the `phseame library <http://www.hjournal.org/phesame/>` written by Michele Barbera and Riccardo Giomi.
 
 Support
 =======
@@ -38,7 +38,9 @@ You can change the repository you are working on at any time by calling::
 
 Querying a Store
 ================
-::
+
+The simplest way to query a store is::
+
 	$sparql = "PREFIX foaf:<http://xmlns.com/foaf/0.1/>
 	SELECT ?s ?o WHERE { ?s foaf:name ?o } LIMIT 100";
 	$resultFormat = phpSesame::SPARQL_XML; // The expected return type, will return a phpSesame_SparqlRes object (Optional)
@@ -47,10 +49,8 @@ Querying a Store
 
 	$result = $store->query($sparql, $resultFormat, $lang, $infer);
 
-	if($result->hasRows())
-	{
-		foreach($result->getRows() as $row)
-		{
+	if($result->hasRows()) {
+		foreach($result->getRows() as $row) {
 			echo "Subject: " . $row['s'] . ", Object: " . $row['o'] . ".";
 		}
 	}
@@ -105,4 +105,4 @@ If you are looking for a good RDF Serializer I use the `ARC2 library <https://gi
 API Documentation
 =================
 
-Please use `PHP Documentor <http://www.phpdoc.org/` to generate the API documentation.
+Please use `PHP Documentor <http://www.phpdoc.org/>` to generate the API documentation.
