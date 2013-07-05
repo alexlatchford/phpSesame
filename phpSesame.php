@@ -411,5 +411,25 @@ class phpSesame
 			throw new Exception ('Failed to clear repository, HTTP response error: ' . $response->getStatus());
 		}
 	}
+
+	/**
+	 * Clears a specific context
+	 *
+	 * Removes all data from the selected repository from a specific context.
+	 *
+	 * @return	void
+	 */
+	public function clearContext($context)
+	{
+	    $this->checkRepository();
+		
+		$request =& new HTTP_Request2($this->dsn . '/repositories/' . $this->repository . '/statements?context=' . $context , HTTP_Request2::METHOD_DELETE);
+
+		$response = $request->send();
+		if($response->getStatus() != 204)
+		{
+			throw new Exception ('Failed to clear context, HTTP response error: ' . $response->getStatus());
+		}
+	}
 }
 ?>
