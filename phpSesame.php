@@ -429,7 +429,7 @@ class phpSesame
 		$response = $request->send();
 		if($response->getStatus() != 204)
 		{
-			throw new Exception ('Failed to clear repository, HTTP response error: ' . $response->getStatus());
+			throw new Exception ('Failed to clear context, HTTP response error: ' . $response->getStatus());
 		}
 	}
 }
