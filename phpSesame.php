@@ -78,7 +78,7 @@ class phpSesame
 	 */
 	public function listRepositories()
 	{
-		$request =& new HTTP_Request2($this->dsn . '/repositories', HTTP_Request2::METHOD_GET);
+		$request = new HTTP_Request2($this->dsn . '/repositories', HTTP_Request2::METHOD_GET);
 		$request->setHeader('Accept: ' . self::SPARQL_XML);
 
 		$response = $request->send();
@@ -161,7 +161,7 @@ class phpSesame
 		$this->checkQueryLang($queryLang);
 		$this->checkResultFormat($resultFormat);
 
-		$request =& new HTTP_Request2($this->dsn . '/repositories/' . $this->repository, HTTP_Request2::METHOD_POST);
+		$request = new HTTP_Request2($this->dsn . '/repositories/' . $this->repository, HTTP_Request2::METHOD_POST);
 		$request->setHeader('Accept: ' . self::SPARQL_XML);
 		$request->addPostParameter('query', $query);
 		$request->addPostParameter('queryLn', $queryLang);
@@ -191,7 +191,7 @@ class phpSesame
 		$this->checkContext($context);
 		$this->checkInputFormat($inputFormat);
 		
-		$request =& new HTTP_Request2($this->dsn . '/repositories/' . $this->repository . '/statements?context=' . $context, HTTP_Request2::METHOD_POST);
+		$request = new HTTP_Request2($this->dsn . '/repositories/' . $this->repository . '/statements?context=' . $context, HTTP_Request2::METHOD_POST);
 		$request->setHeader('Content-type: ' . $inputFormat);
 		$request->setBody($data);
 
@@ -230,7 +230,7 @@ class phpSesame
 		$this->checkContext($context);
 		$this->checkInputFormat($inputFormat);
 
-		$request =& new HTTP_Request2($this->dsn . '/repositories/' . $this->repository . '/statements?context=' . $context, HTTP_Request2::METHOD_PUT);
+		$request = new HTTP_Request2($this->dsn . '/repositories/' . $this->repository . '/statements?context=' . $context, HTTP_Request2::METHOD_PUT);
 		$request->setHeader('Content-type: ' . $inputFormat);
 		$request->setBody($data);
 
@@ -284,7 +284,7 @@ class phpSesame
 			throw new Exception('Please supply a prefix.');
 		}
 
-		$request =& new HTTP_Request2($this->dsn . '/repositories/' . $this->repository . '/namespaces/' . $prefix, HTTP_Request2::METHOD_GET);
+		$request = new HTTP_Request2($this->dsn . '/repositories/' . $this->repository . '/namespaces/' . $prefix, HTTP_Request2::METHOD_GET);
 		$request->setHeader('Accept: text/plain');
 
 		$response = $request->send();
@@ -311,7 +311,7 @@ class phpSesame
 			throw new Exception('Please supply both a prefix and a namesapce.');
 		}
 
-		$request =& new HTTP_Request2($this->dsn . '/repositories/' . $this->repository . '/namespaces/' . $prefix, HTTP_Request2::METHOD_PUT);
+		$request = new HTTP_Request2($this->dsn . '/repositories/' . $this->repository . '/namespaces/' . $prefix, HTTP_Request2::METHOD_PUT);
 		$request->setHeader('Content-type: text/plain');
 		$request->setBody($namespace);
 
@@ -336,7 +336,7 @@ class phpSesame
 			throw new Exception('Please supply a prefix.');
 		}
 
-		$request =& new HTTP_Request2($this->dsn . '/repositories/' . $this->repository . '/namespaces/' . $prefix, HTTP_Request2::METHOD_DELETE);
+		$request = new HTTP_Request2($this->dsn . '/repositories/' . $this->repository . '/namespaces/' . $prefix, HTTP_Request2::METHOD_DELETE);
 
 		$response = $request->send();
 		if($response->getStatus() != 204)
@@ -357,7 +357,7 @@ class phpSesame
 		$this->checkRepository();
 		$this->checkResultFormat($resultFormat);
 
-		$request =& new HTTP_Request2($this->dsn . '/repositories/' . $this->repository . '/contexts', HTTP_Request2::METHOD_POST);
+		$request = new HTTP_Request2($this->dsn . '/repositories/' . $this->repository . '/contexts', HTTP_Request2::METHOD_POST);
 		$request->setHeader('Accept: ' . self::SPARQL_XML);
 
 		$response = $request->send();
@@ -380,7 +380,7 @@ class phpSesame
 	{
 		$this->checkRepository();
 
-		$request =& new HTTP_Request2($this->dsn . '/repositories/' . $this->repository . '/size?context=' . $context, HTTP_Request2::METHOD_POST);
+		$request = new HTTP_Request2($this->dsn . '/repositories/' . $this->repository . '/size?context=' . $context, HTTP_Request2::METHOD_POST);
 		$request->setHeader('Accept: text/plain');
 
 		$response = $request->send();
@@ -403,7 +403,7 @@ class phpSesame
 	{
 	    $this->checkRepository();
 		
-		$request =& new HTTP_Request2($this->dsn . '/repositories/' . $this->repository . '/statements', HTTP_Request2::METHOD_DELETE);
+		$request = new HTTP_Request2($this->dsn . '/repositories/' . $this->repository . '/statements', HTTP_Request2::METHOD_DELETE);
 
 		$response = $request->send();
 		if($response->getStatus() != 204)
