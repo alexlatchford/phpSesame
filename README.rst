@@ -106,4 +106,3 @@ API Documentation
 =================
 
 Please use `PHP Documentor <http://www.phpdoc.org/>`_ to generate the API documentation.
-
