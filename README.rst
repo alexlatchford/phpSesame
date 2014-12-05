@@ -10,7 +10,7 @@ Requirements
 - `PHP 5+ <http://php.net/>`_ - (There shouldn't be any subversion dependencies, but I haven't checked thoroughly)
 - `HTTP_Request2 <http://pear.php.net/package/HTTP_Request2>`_
 
-This project is a rewrite for Sesame 2.x of the `phseame library <http://www.hjournal.org/phesame/>`_ written by Michele Barbera and Riccardo Giomi.
+This project is a rewrite for Sesame 2.x of the `phesame library <http://www.hjournal.org/phesame/>`_ written by Michele Barbera and Riccardo Giomi.
 
 Support
 =======
